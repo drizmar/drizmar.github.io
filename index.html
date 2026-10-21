@@ -190,10 +190,10 @@
   .event-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
   .event-head h3 { font-size: 1.1rem; }
   .event .where { color: var(--text-2); font-size: 0.95rem; margin-bottom: 16px; max-width: 66ch; }
-  .event-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .event-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
   .event-photos figure { margin: 0; }
   .event-photos a { display: block; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
-  .event-photos img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+  .event-photos img { width: 100%; height: auto; display: block; }
   .event-photos figcaption { color: var(--text-2); font-size: 0.86rem; line-height: 1.45; margin-top: 7px; }
   @media (max-width: 480px) { .event-photos { grid-template-columns: 1fr; } }
 
@@ -424,7 +424,7 @@
             <figcaption>404 Team Not Found working the cyber range on competition day.</figcaption>
           </figure>
           <figure>
-            <a href="images/events/fcs-2026/session.jpg"><img src="images/events/fcs-2026/session.jpg" alt="A full conference room watching an MS-ISAC presentation on Security Operations Center services" loading="lazy" width="1600" height="1200"></a>
+            <a href="images/events/fcs-2026/session.jpg"><img src="images/events/fcs-2026/session.jpg" alt="A full conference room watching an MS-ISAC presentation on Security Operations Center services" loading="lazy" width="1320" height="966"></a>
             <figcaption>MS-ISAC talk on Security Operations Center (SOC) services at FGLMS.</figcaption>
           </figure>
         </div>

@@ -185,6 +185,25 @@
   /* empty state */
   .empty { border: 1px dashed var(--border-strong); border-radius: var(--radius); padding: 16px 18px; color: var(--text-2); font-size: 0.95rem; }
 
+  /* events */
+  .event + .event { margin-top: 40px; }
+  .event-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
+  .event-head h3 { font-size: 1.1rem; }
+  .event .where { color: var(--text-2); font-size: 0.95rem; margin-bottom: 16px; max-width: 66ch; }
+  .event-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .event-photos figure { margin: 0; }
+  .event-photos a { display: block; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
+  .event-photos img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+  .event-photos figcaption { color: var(--text-2); font-size: 0.86rem; line-height: 1.45; margin-top: 7px; }
+  @media (max-width: 480px) { .event-photos { grid-template-columns: 1fr; } }
+
+  /* photo viewer */
+  .lightbox { border: 0; padding: 0; background: transparent; max-width: min(1100px, 94vw); overflow: visible; }
+  .lightbox::backdrop { background: rgba(6, 9, 12, 0.88); }
+  .lightbox img { display: block; max-width: 100%; max-height: 82vh; border-radius: var(--radius); }
+  .lightbox p { color: #e4e9ee; font-size: 0.92rem; margin: 10px 2px 0; }
+  .lightbox button { position: absolute; top: -44px; right: 0; background: transparent; color: #e4e9ee; border: 1px solid #5b6874; border-radius: 999px; padding: 4px 14px; font: inherit; font-size: 0.9rem; cursor: pointer; }
+
   /* footer */
   footer { border-top: 1px solid var(--border); padding: 28px 0 44px; color: var(--text-2); font-size: 0.9rem; }
   footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
@@ -201,6 +220,7 @@
     </a>
     <nav class="topnav" aria-label="Sections">
       <a href="#competitions">Competitions</a>
+      <a href="#events">Events</a>
       <a href="#certifications">Certs</a>
       <a href="#lab">Lab</a>
       <a href="#writeups">Writeups</a>
@@ -265,6 +285,10 @@
       <p class="blurb">Results, milestones, and events as they happen.</p>
       <ul class="dated">
         <li>
+          <time datetime="2026-10-20">Oct 2026</time>
+          <div><span class="what">5th place, Florida College System Cybersecurity Competition</span><span class="sub">Competed in Tallahassee as 404 Team Not Found, after attending FGLMS the day before. <a href="#events">Photos</a></span></div>
+        </li>
+        <li>
           <time datetime="2026-08">Aug 2026</time>
           <div><span class="what">Named team captain of the Cyber Bucs</span><span class="sub">Leading the roster and running weekly training for the 2026–27 season.</span></div>
         </li>
@@ -323,6 +347,11 @@
           <span class="res hot">170 / 7,010 · Spring 2026 Individual</span>
         </li>
         <li>
+          <h3>Florida College System Cybersecurity Competition</h3>
+          <span class="desc">Statewide team competition between Florida College System schools on a virtual cyber range, defending the networks of simulated organizations. Team: 404 Team Not Found. <a href="#events">Photos</a></span>
+          <span class="res hot">5th place · Oct 2026</span>
+        </li>
+        <li>
           <h3>BSides SWFL CTF</h3>
           <span class="desc">In-person CTF at the Southwest Florida BSides security conference.</span>
           <span class="res hot">2nd place · 2025</span>
@@ -358,16 +387,48 @@
           <span class="res">Fall 2026 · upcoming</span>
         </li>
         <li>
-          <h3>Florida College System MITRE CTF</h3>
-          <span class="desc">State-level team CTF built around the MITRE ATT&amp;CK framework.</span>
-          <span class="res">—</span>
-        </li>
-        <li>
           <h3>CyberBay — Tampa</h3>
           <span class="desc">In-person competition and conference.</span>
           <span class="res">—</span>
         </li>
       </ul>
+    </div>
+  </section>
+
+  <!-- ==================== EVENTS ==================== -->
+  <!-- New event: copy one <article class="event"> block and put it at the top. Photos go in images/events/<event-name>/ -->
+  <section id="events">
+    <div class="container">
+      <div class="sec-head">
+        <h2>Events</h2>
+        <span class="meta">newest first</span>
+      </div>
+
+      <article class="event">
+        <div class="event-head">
+          <h3>Florida College System Cybersecurity Competition</h3>
+          <span class="pill earned">5th place</span>
+        </div>
+        <p class="where">Tallahassee, October 2026. Teams from Florida College System schools defend the networks of simulated organizations on a virtual cyber range. I competed with 404 Team Not Found. The day before, we attended the Florida Government Leadership and Modernization Summit (FGLMS), a networking and learning event for Florida&#8217;s public sector technology community.</p>
+        <div class="event-photos">
+          <figure>
+            <a href="images/events/fcs-2026/team-sign.jpg"><img src="images/events/fcs-2026/team-sign.jpg" alt="Andrew with teammates Melissa, Elijah, and Jovan beside the FCS Cybersecurity Competition sign, with downtown Tallahassee behind them" loading="lazy" width="1600" height="1200"></a>
+            <figcaption>404 Team Not Found in Tallahassee: Melissa, Elijah, Jovan, and me.</figcaption>
+          </figure>
+          <figure>
+            <a href="images/events/fcs-2026/roster.jpg"><img src="images/events/fcs-2026/roster.jpg" alt="The FSW Cyber Bucs group in matching FSW shirts in front of a Florida College System backdrop" loading="lazy" width="1600" height="1200"></a>
+            <figcaption>The FSW Cyber Bucs roster at the competition.</figcaption>
+          </figure>
+          <figure>
+            <a href="images/events/fcs-2026/cyber-range.jpg"><img src="images/events/fcs-2026/cyber-range.jpg" alt="FSW team members working at laptops and monitors during the competition" loading="lazy" width="1600" height="1200"></a>
+            <figcaption>404 Team Not Found working the cyber range on competition day.</figcaption>
+          </figure>
+          <figure>
+            <a href="images/events/fcs-2026/session.jpg"><img src="images/events/fcs-2026/session.jpg" alt="A full conference room watching an MS-ISAC presentation on Security Operations Center services" loading="lazy" width="1600" height="1200"></a>
+            <figcaption>MS-ISAC talk on Security Operations Center (SOC) services at FGLMS.</figcaption>
+          </figure>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -528,11 +589,38 @@
 <footer>
   <div class="container">
     <span>Andrew Marzocca · Fort Myers, FL</span>
-    <span>Updated September 2026</span>
+    <span>Updated October 2026</span>
   </div>
 </footer>
 
+<dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+  <button type="button" id="lightboxClose">Close</button>
+  <img id="lightboxImg" alt="">
+  <p id="lightboxCap"></p>
+</dialog>
+
 <script>
+  // Photo viewer: click an event photo to see it full size. Esc, Close, or clicking outside the photo closes it.
+  (function () {
+    var box = document.getElementById('lightbox');
+    if (!box || typeof box.showModal !== 'function') return; // old browsers just open the image file
+    var img = document.getElementById('lightboxImg');
+    var cap = document.getElementById('lightboxCap');
+    document.querySelectorAll('.event-photos a').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        var thumb = link.querySelector('img');
+        var fc = link.parentElement.querySelector('figcaption');
+        img.src = link.getAttribute('href');
+        img.alt = thumb ? thumb.alt : '';
+        cap.textContent = fc ? fc.textContent : '';
+        box.showModal();
+      });
+    });
+    document.getElementById('lightboxClose').addEventListener('click', function () { box.close(); });
+    box.addEventListener('click', function (e) { if (e.target === box) box.close(); });
+  })();
+
   // Theme toggle
   (function () {
     var root = document.documentElement;

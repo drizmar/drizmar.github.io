@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Andrew Marzocca — Cybersecurity &amp; Networking</title>
-<meta name="description" content="Andrew Marzocca: cybersecurity student, Cyber Bucs team captain at Florida SouthWestern State College, NCL top 2.5% nationally. Competitions, certifications, home lab, and writeups.">
+<meta name="description" content="Andrew Marzocca: cybersecurity student and Cyber Bucs team captain at Florida SouthWestern State College, ranked 76th of 5,967 in the NCL Fall 2026 Individual Game. Competitions, certifications, home lab, and writeups.">
 <meta name="theme-color" content="#0f151b">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -136,11 +136,25 @@
   /* competitions list */
   .comps li { padding: 16px 0; border-top: 1px solid var(--border); display: grid; grid-template-columns: 1fr auto; gap: 6px 20px; }
   .comps li:last-child { border-bottom: 1px solid var(--border); }
-  .comps h3 { font-size: 1rem; }
-  .comps .desc { color: var(--text-2); font-size: 0.93rem; grid-column: 1; }
+  .comps h3 { font-size: 1rem; grid-column: 1; grid-row: 1; }
+  .comps .desc { color: var(--text-2); font-size: 0.93rem; grid-column: 1; grid-row: 2; }
   .comps .res { grid-column: 2; grid-row: 1 / span 2; align-self: start; text-align: right; font-size: 0.93rem; color: var(--text-2); white-space: nowrap; }
   .comps .res.hot { color: var(--accent-text); font-weight: 600; }
-  @media (max-width: 560px) { .comps li { grid-template-columns: 1fr; } .comps .res { grid-column: 1; grid-row: auto; text-align: left; white-space: normal; } }
+  .comps .res .line { display: block; }
+  .comps .res .line + .line { color: var(--text-2); font-weight: 400; margin-top: 2px; }
+  .breakdown { grid-column: 1 / 3; grid-row: 3; margin-top: 2px; min-width: 0; }
+  .breakdown summary { cursor: pointer; color: var(--link); font-size: 0.92rem; width: fit-content; }
+  .breakdown summary:hover { text-decoration: underline; }
+  .breakdown .table-wrap { overflow-x: auto; margin-top: 10px; }
+  .breakdown table { width: 100%; border-collapse: collapse; font-size: 0.9rem; font-variant-numeric: tabular-nums; }
+  .breakdown th, .breakdown td { padding: 7px 0; border-bottom: 1px solid var(--border); white-space: nowrap; text-align: right; }
+  .breakdown th:first-child, .breakdown td:first-child { text-align: left; padding-right: 16px; }
+  .breakdown th + th, .breakdown td + td { padding-left: 16px; }
+  .breakdown th { color: var(--text-2); font-weight: 500; font-size: 0.82rem; }
+  .breakdown .perfect { color: var(--accent-text); font-weight: 600; }
+  .breakdown tfoot td { font-weight: 600; border-bottom: 0; }
+  .breakdown .note { color: var(--text-2); font-size: 0.85rem; margin: 8px 0 0; }
+  @media (max-width: 560px) { .comps li { grid-template-columns: 1fr; } .comps .res { grid-column: 1; grid-row: 3; text-align: left; white-space: normal; } .breakdown { grid-column: 1; grid-row: 4; } }
 
   /* pill */
   .pill { display: inline-block; font-size: 0.78rem; font-weight: 500; padding: 2px 9px; border-radius: 999px; border: 1px solid var(--border-strong); color: var(--text-2); vertical-align: middle; }
@@ -285,6 +299,10 @@
       <p class="blurb">Results, milestones, and events as they happen.</p>
       <ul class="dated">
         <li>
+          <time datetime="2026-10-25">Oct 2026</time>
+          <div><span class="what">NCL Fall 2026 Individual Game: 76th of 5,967</span><span class="sub">Top 1.3% nationally with 88.3% accuracy and 97.6% completion. Perfect accuracy in Log Analysis and Cryptography. <a href="#competitions">Module breakdown</a></span></div>
+        </li>
+        <li>
           <time datetime="2026-10-20">Oct 2026</time>
           <div><span class="what">5th place, Florida College System Cybersecurity Competition</span><span class="sub">Competed in Tallahassee as 404 Team Not Found, after attending FGLMS the day before. <a href="#events">Photos</a></span></div>
         </li>
@@ -302,7 +320,7 @@
         </li>
         <li>
           <time datetime="2026-04">Apr 2026</time>
-          <div><span class="what">NCL Spring 2026 Individual Game — 170th of 7,010</span><span class="sub">Top 2.5% nationally. Perfect score in Digital Forensics.</span></div>
+          <div><span class="what">NCL Spring 2026 Individual Game: 170th of 7,010</span><span class="sub">Top 2.5% nationally. Perfect score in Digital Forensics.</span></div>
         </li>
         <li>
           <time datetime="2026">Spring 2026</time>
@@ -343,8 +361,29 @@
       <ul class="comps">
         <li>
           <h3>National Cyber League (NCL)</h3>
-          <span class="desc">Individual and team games, fall and spring. Jeopardy-style across nine categories.</span>
-          <span class="res hot">170 / 7,010 · Spring 2026 Individual</span>
+          <span class="desc">Individual and team games, fall and spring, across nine challenge categories. Fall 2026: perfect accuracy in Log Analysis and Cryptography, and full points in 7 of 9 modules.</span>
+          <span class="res hot"><span class="line">76 / 5,967 · Fall 2026 Individual</span><span class="line">170 / 7,010 · Spring 2026 Individual</span></span>
+          <details class="breakdown">
+            <summary>Fall 2026 Individual Game breakdown</summary>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Module</th><th>Accuracy</th><th>Completion</th><th>Points</th></tr></thead>
+                <tbody>
+                  <tr><td>Open Source Intelligence</td><td>85.7%</td><td>100%</td><td>390 / 390</td></tr>
+                  <tr><td>Cryptography</td><td class="perfect">100%</td><td>100%</td><td>375 / 375</td></tr>
+                  <tr><td>Password Cracking</td><td>95.5%</td><td>100%</td><td>335 / 335</td></tr>
+                  <tr><td>Log Analysis</td><td class="perfect">100%</td><td>100%</td><td>300 / 300</td></tr>
+                  <tr><td>Network Traffic Analysis</td><td>85%</td><td>94.4%</td><td>230 / 300</td></tr>
+                  <tr><td>Forensics</td><td>70.8%</td><td>100%</td><td>300 / 300</td></tr>
+                  <tr><td>Scanning &amp; Reconnaissance</td><td>85.7%</td><td>80%</td><td>230 / 300</td></tr>
+                  <tr><td>Exploitation &amp; Enumeration</td><td>83.3%</td><td>100%</td><td>300 / 300</td></tr>
+                  <tr><td>Web Application Exploitation</td><td>91.7%</td><td>100%</td><td>300 / 300</td></tr>
+                </tbody>
+                <tfoot><tr><td>Overall</td><td>88.3%</td><td>97.6%</td><td>2,860 / 3,000</td></tr></tfoot>
+              </table>
+            </div>
+            <p class="note">Ranked 76th of 5,967 in the Standard Student Bracket (top 1.3%). Overall points include the 100-point survey.</p>
+          </details>
         </li>
         <li>
           <h3>Florida College System Cybersecurity Competition</h3>
